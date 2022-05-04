@@ -16,7 +16,11 @@ config/icon="res://icon.png"
 
 [display]
 
+window/size/test_width=2048
+window/size/test_height=1200
 mouse_cursor/custom_image="res://Assets/scrosshair.png"
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [input]
 

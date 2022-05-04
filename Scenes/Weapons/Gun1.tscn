@@ -7,12 +7,11 @@
 
 [node name="Weapon" instance=ExtResource( 1 )]
 attack = ExtResource( 4 )
+cooldown = 0.25
+spread = 0.1
 
 [node name="AttackStart" parent="." index="0"]
 position = Vector2( 57, 0 )
-
-[node name="Timer" parent="." index="1"]
-wait_time = 0.25
 
 [node name="Sprite" parent="." index="2"]
 position = Vector2( 27, 5 )
