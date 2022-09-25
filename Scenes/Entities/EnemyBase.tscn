@@ -1,9 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Entities/EntityBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Entities/EnemyBase.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/StateMachine/StateMachine.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Combat/Hitbox.tscn" type="PackedScene" id=4]
 
-[node name="EnemyBase" instance=ExtResource( 1 )]
+[node name="EnemyBase" groups=["enemies"] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+damage_effect = null
 
-[editable path="Hurtbox"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+
+[node name="Hitbox" parent="." index="2" instance=ExtResource( 4 )]
+collision_layer = 0
+
+[node name="StateMachine" type="Node" parent="." index="3"]
+script = ExtResource( 3 )
+
+[editable path="Hitbox"]

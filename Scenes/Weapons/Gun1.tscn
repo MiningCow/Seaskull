@@ -1,23 +1,25 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scenes/Weapons/WeaponBase.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/gun1.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Scripts/Weapons/GunBase.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Weapons/GunBase.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/gun1.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/Attacks/Bullet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/gun1.mp3" type="AudioStream" id=4]
 
-[node name="Weapon" instance=ExtResource( 1 )]
-attack = ExtResource( 4 )
+[node name="Weapon" instance=ExtResource( 2 )]
+rotation = 0.0
+script = ExtResource( 1 )
 cooldown = 0.25
-spread = 0.1
+projectile = null
+spread = 0.0
 
-[node name="AttackStart" parent="." index="0"]
-position = Vector2( 57, 0 )
-
-[node name="Sprite" parent="." index="2"]
-position = Vector2( 27, 5 )
+[node name="Sprite" parent="WeaponPivot" index="0"]
+position = Vector2( 52, -8 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 
-[node name="Sound" parent="." index="3"]
-stream = ExtResource( 2 )
+[node name="ProjectileStart" parent="WeaponPivot" index="1"]
+position = Vector2( 86, -12 )
+
+[node name="Sound" parent="." index="2"]
+stream = ExtResource( 4 )
 volume_db = -10.0
