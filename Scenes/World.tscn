@@ -35,3 +35,8 @@ position = Vector2( 512, 512 )
 [node name="Control" type="Control" parent="CanvasLayer"]
 margin_right = 40.0
 margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Player Health"
